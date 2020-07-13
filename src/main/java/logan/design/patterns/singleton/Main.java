@@ -1,23 +1,24 @@
 package logan.design.patterns.singleton;
 
-import java.util.stream.IntStream;
+import logan.design.patterns.common.Utility;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         log.info("main <=START");
         testStaticSingleton();
+        testInnerClassSingleTon();
         log.info("main <= END");
     }
 
-    public static void testStaticSingleton() {
-        IntStream.range(0, 10).parallel().forEach(i -> {
-            log.info("testStaticSingleton <= START [{}]", i);
-            StaticSingleton.getInstance();
-            log.info("testStaticSingleton <= END [{}]", i);
-        });
+    public static void testStaticSingleton() throws InterruptedException {
+        Utility.testWrapper("Static", StaticSingleton::getInstance);
+    }
+
+    public static void testInnerClassSingleTon() throws InterruptedException {
+        Utility.testWrapper("InnerClass", InnerClassSingleTon::getInstance);
     }
 
 }

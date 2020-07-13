@@ -4,7 +4,7 @@ import logan.design.patterns.common.Constants;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class StaticSingleton {
+public final class StaticSingleton {
 
     private static StaticSingleton instance = new StaticSingleton();
 
