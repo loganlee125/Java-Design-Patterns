@@ -1,4 +1,4 @@
-package logan.design.patterns.common;
+package logan.common;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;

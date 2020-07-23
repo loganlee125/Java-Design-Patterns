@@ -1,4 +1,4 @@
-package logan.design.patterns.common;
+package logan.common;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
@@ -38,7 +38,7 @@ public final class CustomExecutor {
             var isTerminated = executorService.awaitTermination(Constants.SHUTDOWN_AWAIT_TIME, TimeUnit.MILLISECONDS);
             if (!isTerminated) {
                 var runables = executorService.shutdownNow();
-                log.warn("", runables.size());
+                log.warn("shutdownNow size [{}]", runables.size());
             }
         }
     }

@@ -1,4 +1,4 @@
-package logan.design.patterns.common;
+package logan.common;
 
 import java.util.stream.IntStream;
 import lombok.AccessLevel;
