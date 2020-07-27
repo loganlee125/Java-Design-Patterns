@@ -1,6 +1,6 @@
-package logan.design.patterns.singleton;
+package logan.singleton;
 
-import logan.design.patterns.common.Constants;
+import logan.common.Constants;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
