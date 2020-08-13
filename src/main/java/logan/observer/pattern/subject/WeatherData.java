@@ -1,7 +1,7 @@
 package logan.observer.pattern.subject;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 import logan.observer.pattern.observer.Observer;
 import lombok.Data;
 
@@ -14,7 +14,7 @@ public class WeatherData implements Subject {
     private float pressure;
 
     public WeatherData() {
-        this.observers = new ArrayList<>();
+        this.observers = new CopyOnWriteArrayList<>();
     }
 
     @Override
@@ -29,12 +29,8 @@ public class WeatherData implements Subject {
 
     @Override
     public void notifyObservers() {
-        Observer observer;
-        int length = observers.size();
-        for (int i = 0; i < length; i++) {
-            observer = observers.get(i);
-            observer.update(temperature, humidity, pressure);
-        }
+        observers.stream()
+                .forEach(observer -> observer.update(temperature, humidity, pressure));
     }
 
     public void measurementsChanged() {
