@@ -16,17 +16,14 @@ public class WeatherData {
     }
 
     private float getPressure() {
-        // TODO Auto-generated method stub
         return 0;
     }
 
     private float getHumidity() {
-        // TODO Auto-generated method stub
         return 0;
     }
 
     private float getTemperature() {
-        // TODO Auto-generated method stub
         return 0;
     }
 

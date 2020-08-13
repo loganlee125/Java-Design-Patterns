@@ -10,12 +10,11 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class HeatIndexDisplay implements Observer, DisplayElement {
 
-    private float heatIndex = 0.0f;
+    private float heatIndex;
     private Subject weatherData;
 
     public HeatIndexDisplay(Subject weatherData) {
         this.weatherData = weatherData;
-        weatherData.registerObserver(this);
     }
 
     public void update(float t, float rh, float pressure) {

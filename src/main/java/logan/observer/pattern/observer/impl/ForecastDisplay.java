@@ -10,20 +10,22 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ForecastDisplay implements Observer, DisplayElement {
 
-    private float currentPressure = 29.92f;
+    private float currentPressure;
     private float lastPressure;
+    private Subject weatherData;
 
     public ForecastDisplay(Subject weatherData) {
-        weatherData.registerObserver(this);
+        this.currentPressure = 29.92F;
+        this.weatherData = weatherData;
     }
 
     @Override
     public void display() {
         if (currentPressure > lastPressure) {
             log.info("Forecast: Improving weather on the way!");
-        } else if (currentPressure == lastPressure) {
+        } else if (Float.compare(currentPressure, lastPressure) == 0) {
             log.info("Forecast: More of the same");
-        } else if (currentPressure < lastPressure) {
+        } else {
             log.info("Forecast: Watch out for cooler, rainy weather");
         }
     }

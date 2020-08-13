@@ -10,10 +10,14 @@ public class WeatherStation {
     public static void main(String[] args) {
         WeatherData weatherData = new WeatherData();
 
-        new CurrentConditionsDisplay(weatherData);
-        new StatisticsDisplay(weatherData);
-        new ForecastDisplay(weatherData);
-        new HeatIndexDisplay(weatherData);
+        var current = new CurrentConditionsDisplay(weatherData);
+        weatherData.registerObserver(current);
+        var statistics = new StatisticsDisplay(weatherData);
+        weatherData.registerObserver(statistics);
+        var forecast = new ForecastDisplay(weatherData);
+        weatherData.registerObserver(forecast);
+        var heat = new HeatIndexDisplay(weatherData);
+        weatherData.registerObserver(heat);
 
         weatherData.setMeasurements(80, 65, 30.4F);
         weatherData.setMeasurements(82, 70, 29.2F);
