@@ -4,6 +4,7 @@
 4. Strive for loosely coupled designs between objects that interact.
 5. Classes should be open extension, but closed for modification.
 6. Depend upon abstractions. Do not depend upon concrete classes.
+7. Principle of Least Knowledge - talk only to your immediate friends.
 
 Patterns:
 1. The Strategy Pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable. Strategy lets the algorithm vary independently from clients that use it.
@@ -12,3 +13,5 @@ Patterns:
 4. The Factory Method Pattern defines an interface for creating an object, but lets subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.
 5. The Abstract Factory Pattern provides an interface for creating families of related or dependent objects without specifying their concrete classes.
 6. The Command Pattern encapsulates a request as an object, thereby letting you parameterize other objects with different requests, queue or log requests, and support undoable operations.
+7. The Adapter Pattern converts the interface of a class into another interface the clients expect. Adapter lets classes work together that couldn’t otherwise because of incompatible interfaces.
+8. The Facade Pattern provides a unified interface to a set of interfaces in a subsytem. Facade defi nes a higher-level interface that makes the subsystem easier to use.
