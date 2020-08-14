@@ -7,6 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 public class Main {
 
     public static void main(String[] args) throws InterruptedException {
+        StaticSingleton.utilTest();
+        InnerClassSingleTon.utilTest();
         log.info("main <=START");
         testStaticSingleton();
         testInnerClassSingleTon();
