@@ -21,4 +21,8 @@ public final class StaticSingleton {
     public static StaticSingleton getInstance() {
         return instance;
     }
+
+    public static void utilTest() {
+        log.info("utilTest");
+    }
 }

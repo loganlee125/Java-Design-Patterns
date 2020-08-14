@@ -20,6 +20,10 @@ public final class InnerClassSingleTon {
         return InnerClass.instance;
     }
 
+    public static void utilTest() {
+        log.info("utilTest");
+    }
+
     private static class InnerClass {
         private static InnerClassSingleTon instance = new InnerClassSingleTon();
     }
