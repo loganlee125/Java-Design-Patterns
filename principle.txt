@@ -6,6 +6,7 @@
 6. Depend upon abstractions. Do not depend upon concrete classes.
 7. Principle of Least Knowledge - talk only to your immediate friends.
 8. The Hollywood Principle - Don’t call us, we’ll call you.
+9. A class should have only one reason to change.
 
 Patterns:
 1. The Strategy Pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable. Strategy lets the algorithm vary independently from clients that use it.
@@ -17,3 +18,5 @@ Patterns:
 7. The Adapter Pattern converts the interface of a class into another interface the clients expect. Adapter lets classes work together that couldn’t otherwise because of incompatible interfaces.
 8. The Facade Pattern provides a unified interface to a set of interfaces in a subsystem. Facade defines a higher-level interface that makes the subsystem easier to use.
 9. The Template Method Pattern defines the skeleton of an algorithm in a method, deferring some steps to subclasses. Template Method lets subclasses redefine certain steps of an algorithm without changing the algorithm’s structure.
+10. The Iterator Pattern provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation.
+11. The Composite Pattern allows you to compose objects into tree structures to represent part-whole hierarchies. Composite lets clients treat individual objects and compositions of objects uniformly.
