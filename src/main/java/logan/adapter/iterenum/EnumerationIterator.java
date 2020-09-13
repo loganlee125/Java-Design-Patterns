@@ -2,10 +2,11 @@ package logan.adapter.iterenum;
 
 import java.util.Enumeration;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class EnumerationIterator<T> implements Iterator<T> {
 
-    private Enumeration<T> enumeration;
+    private final Enumeration<T> enumeration;
 
     public EnumerationIterator(Enumeration<T> enumeration) {
         this.enumeration = enumeration;
@@ -16,7 +17,11 @@ public class EnumerationIterator<T> implements Iterator<T> {
         return enumeration.hasMoreElements();
     }
 
+    @Override
     public T next() {
+        if (!hasNext()) {
+            throw new NoSuchElementException();
+        }
         return enumeration.nextElement();
     }
 
