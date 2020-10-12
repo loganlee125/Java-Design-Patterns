@@ -35,9 +35,9 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>io.spring.platform</groupId>
-				<artifactId>platform-bom</artifactId>
-				<version>Cairo-SR8</version>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-parent</artifactId>
+				<version>2.3.4.RELEASE</version>
 				<scope>import</scope>
 				<type>pom</type>
 			</dependency>
