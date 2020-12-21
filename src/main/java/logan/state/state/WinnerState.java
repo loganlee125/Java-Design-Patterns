@@ -1,16 +1,13 @@
 package logan.state.state;
 
-import logan.state.machine.Machine;
+import logan.state.GumballMachine;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class WinnerState implements State {
+public class WinnerState extends State {
 
-    private Machine machine;
-
-    public WinnerState(Machine machine) {
-        super();
-        this.machine = machine;
+    public WinnerState(GumballMachine machine) {
+        super(machine);
     }
 
     @Override
@@ -30,7 +27,7 @@ public class WinnerState implements State {
 
     @Override
     public void dispense() {
-        System.out.println("YOU’RE A WINNER! You get two gumballs for your quarter");
+        log.info("YOU’RE A WINNER! You get two gumballs for your quarter");
         machine.releaseBall();
         if (machine.isEmpty()) {
             machine.switchState(StateType.SOLD_OUT);

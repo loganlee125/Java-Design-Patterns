@@ -1,13 +1,26 @@
 package logan.state.state;
 
-public interface State {
+import logan.state.GumballMachine;
+import lombok.extern.slf4j.Slf4j;
 
-    void insertQuarter();
+@Slf4j
+public abstract class State {
 
-    void ejectQuarter();
+    protected final GumballMachine machine;
 
-    void turnCrank();
+    public State(GumballMachine machine) {
+        this.machine = machine;
+    }
 
-    void dispense();
+    public abstract void insertQuarter();
 
+    public abstract void ejectQuarter();
+
+    public abstract void turnCrank();
+
+    public abstract void dispense();
+
+    public void refill() {
+        log.info("No need to reset state at current state [{}]", this.getClass().getSimpleName());
+    }
 }

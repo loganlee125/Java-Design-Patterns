@@ -1,16 +1,13 @@
 package logan.state.state;
 
-import logan.state.machine.Machine;
+import logan.state.GumballMachine;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class NoQuarterState implements State {
+public class NoQuarterState extends State {
 
-    private Machine machine;
-
-    public NoQuarterState(Machine machine) {
-        super();
-        this.machine = machine;
+    public NoQuarterState(GumballMachine machine) {
+        super(machine);
     }
 
     @Override
