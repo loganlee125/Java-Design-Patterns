@@ -1,16 +1,13 @@
 package logan.state.state;
 
-import logan.state.machine.Machine;
+import logan.state.GumballMachine;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class SoldOutState implements State {
+public class SoldOutState extends State {
 
-    private Machine machine;
-
-    public SoldOutState(Machine machine) {
-        super();
-        this.machine = machine;
+    public SoldOutState(GumballMachine machine) {
+        super(machine);
     }
 
     @Override

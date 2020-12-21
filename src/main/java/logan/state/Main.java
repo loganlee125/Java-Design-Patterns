@@ -1,4 +1,4 @@
-package logan.state.original;
+package logan.state;
 
 public class Main {
 

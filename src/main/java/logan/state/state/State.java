@@ -1,13 +1,20 @@
 package logan.state.state;
 
-public interface State {
+import logan.state.GumballMachine;
 
-    void insertQuarter();
+public abstract class State {
 
-    void ejectQuarter();
+    protected final GumballMachine machine;
 
-    void turnCrank();
+    public State(GumballMachine machine) {
+        this.machine = machine;
+    }
 
-    void dispense();
+    public abstract void insertQuarter();
 
+    public abstract void ejectQuarter();
+
+    public abstract void turnCrank();
+
+    public abstract void dispense();
 }

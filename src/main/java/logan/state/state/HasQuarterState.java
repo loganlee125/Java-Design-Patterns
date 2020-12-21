@@ -1,18 +1,17 @@
 package logan.state.state;
 
-import java.util.Random;
-import logan.state.machine.Machine;
+import logan.state.GumballMachine;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.Random;
+
 @Slf4j
-public class HasQuarterState implements State {
+public class HasQuarterState extends State {
 
     private Random randomWinner = new Random(System.currentTimeMillis());
-    private Machine machine;
 
-    public HasQuarterState(Machine machine) {
-        super();
-        this.machine = machine;
+    public HasQuarterState(GumballMachine machine) {
+        super(machine);
     }
 
     @Override
@@ -30,7 +29,7 @@ public class HasQuarterState implements State {
     public void turnCrank() {
         log.info("You turned...");
         int winner = randomWinner.nextInt(10);
-        if ((winner == 0) && !machine.isEmpty()) {
+        if (winner == 0 && !machine.isEmpty()) {
             machine.switchState(StateType.WINNER);
         } else {
             machine.switchState(StateType.SOLD);
@@ -41,5 +40,4 @@ public class HasQuarterState implements State {
     public void dispense() {
         log.error("No gumball dispensed");
     }
-
 }

@@ -1,8 +1,8 @@
-package logan.state.machine;
+package logan.state;
 
 import logan.state.state.StateType;
 
-public interface Machine {
+public interface GumballMachine {
 
     void switchState(StateType newState);
 
@@ -15,5 +15,4 @@ public interface Machine {
     void ejectQuarter();
 
     void turnCrank();
-
 }
