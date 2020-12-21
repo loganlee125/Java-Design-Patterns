@@ -67,6 +67,13 @@ public class GumballMachineImpl implements GumballMachine {
     }
 
     @Override
+    public void refill(int balls) {
+        this.count += balls;
+        log.info("The gumball machine was just refilled; it's new count is : [{}]", this.count);
+        state.refill();
+    }
+
+    @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append("GumballMachine [");

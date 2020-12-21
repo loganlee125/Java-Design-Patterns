@@ -15,4 +15,6 @@ public interface GumballMachine {
     void ejectQuarter();
 
     void turnCrank();
+
+    void refill(int balls);
 }

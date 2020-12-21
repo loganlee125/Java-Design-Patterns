@@ -29,4 +29,9 @@ public class SoldOutState extends State {
     public void dispense() {
         log.info("No gumball dispensed");
     }
+
+    @Override
+    public void refill() {
+        machine.switchState(StateType.NO_QUARTER);
+    }
 }
