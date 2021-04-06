@@ -1,6 +1,8 @@
 package logan.compound;
 
-public interface Quackable {
+import logan.compound.observer.QuackObservable;
+
+public interface Quackable extends QuackObservable {
 
     void quack();
 
